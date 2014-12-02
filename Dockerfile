@@ -21,6 +21,9 @@ ADD https://phar.phpunit.de/phploc.phar   /usr/local/bin/phploc
 RUN cd /usr/local/bin && \
   chmod +x composer phpunit phpcpd phpdcd phploc
 
+ENV COMPOSER_BIN_DIR /usr/local/bin
+ENV COMPOSER_VENDOR_DIR /var/composer/vendor
+
 RUN /usr/local/bin/composer global require \
 	'squizlabs/php_codesniffer=1.5.*' \
 	'pdepend/pdepend=1.1.*' \
